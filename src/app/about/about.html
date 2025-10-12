@@ -1,0 +1,24 @@
+<section id="about"
+    class="max-w-3xl mx-auto my-24 p-10 bg-gray-900/90 rounded-3xl shadow-2xl border border-gray-800 backdrop-blur-md">
+    <h2 class="text-4xl font-bold mb-6 text-cyan-400">About Me</h2>
+    <p class="text-xl text-gray-300 mb-6">
+        I'm a developer with a love for building beautiful, performant, and accessible web applications. I specialize in
+        Angular, Ionic Framework, Typescript, Bootstrap, Tailwind CSS, Node.js, GCP, HTML, CSS, and JavaScript — and I’m
+        always exploring new technologies to push the boundaries of what the web can do.
+    </p>
+    <h3 class="text-2xl font-bold mt-10 mb-4 text-cyan-300">Skills</h3>
+    <div class="flex flex-wrap gap-4 mt-4">
+        @for(skill of skills(); track skill;){
+        <span class="bg-cyan-700/80 text-white px-4 py-2 rounded-full text-base font-semibold shadow">{{ skill }}</span>
+        }
+    </div>
+
+    <h3 class="text-2xl font-bold mt-10 mb-4 text-cyan-300">Tools</h3>
+    <div class="flex flex-wrap gap-4">
+        @for(tool of tools(); track tool;){
+        <span class="bg-gray-800 text-cyan-200 px-4 py-2 rounded-full text-base font-semibold shadow">{{ tool
+            }}</span>
+
+        }
+    </div>
+</section>
