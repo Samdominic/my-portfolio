@@ -14,7 +14,10 @@ export class About {
     'Bootstrap',
     'Tailwind CSS',
     'GCP (Google Cloud Platform)',
+    'Firebase',
+    'MongoDB',
     'Node.js',
+    'Express.js',
     'HTML',
     'CSS',
     'JavaScript',
@@ -26,6 +29,7 @@ export class About {
  readonly tools = signal([
     'Git',
     'GitHub',
+    'GitLab',
     'JIRA',
     'VS Code',
     'Postman',
