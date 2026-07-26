@@ -12,38 +12,23 @@ export class Projects {
 
   readonly projects = signal([
     {
-      title: 'Pet Care Management App',
-      description: 'A mobile application to help pet owners manage their pets\' health and wellness.',
+      title: 'Assessment Management System',
+      description:
+        'Built a secure assessment platform with offline exam support, automatic sync, and real-time submission. The system includes authentication, auto-save, timer management, and secure REST API workflows for exam delivery and response collection.',
+      technologies: ['Angular', 'Angular Material', 'Node.js', 'MongoDB', 'Firebase'],
+    },
+    {
+      title: 'Pet Care & Health Management',
+      description:
+        'Developed an intuitive pet care app that manages profiles, medical history, vaccination schedules, feeding reminders, and daily activity tracking. Implemented secure storage of vet records, prescriptions, and health certificates with real-time Firebase sync.',
       technologies: ['Ionic', 'Angular', 'Capacitor', 'Firebase', 'GCP'],
     },
     {
-      title: 'Human Health Wellness App',
-      description: 'A mobile application to promote healthy living and wellness among users.',
-      technologies: ['Ionic', 'Angular', 'Capacitor', 'GCP', 'Firebase'],
-    },
-    {
-    title: 'Assessment Management System',
-    description:
-      'A web-based application designed to manage and streamline the assessment process for educational institutions. The system enables administrators and faculty members to create assessments, manage question banks, schedule exams, evaluate results, and generate performance reports efficiently.',
-    technologies: [
-      'Angular',
-      'Angular Material',
-      'Node.js',
-      'MongoDB',
-    ],
-  },
-  {
-    title: 'Exam Writing System',
-    description:
-      'A cross-platform examination application developed for iOS, Android and Web, enabling students to securely write and submit exams online. The system supports question navigation, auto-save functionality, timer management, offline synchronization, and real-time exam monitoring.',
-    technologies: [
-      'Angular',
-      'Ionic',
-      'Capacitor',
-      'Node.js',
-      'MongoDB',
-    ],
-  },
+      title: 'Human Health Wellness',
+      description:
+        'Designed wellness modules for tracking sessions, routines, hydration, nutrition, and activity logging. Added intelligent reminders, AI-driven summary reports, engagement monitoring, and cross-platform performance for web and mobile users.',
+      technologies: ['Ionic', 'Angular', 'Capacitor', 'Firebase', 'GCP'],
+    }
   ]);
 
 }

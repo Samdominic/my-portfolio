@@ -1,12 +1,16 @@
 <section id="about"
     class="max-w-3xl mx-auto my-10 p-10 bg-gray-900/90 rounded-3xl shadow-2xl border border-gray-800 backdrop-blur-md">
     <h2 class="text-4xl font-bold mb-6 text-cyan-400">About Me</h2>
-    <p class="text-xl text-gray-300 mb-6">
-        I'm a developer with a love for building beautiful, performant, and accessible web applications. I specialize in
-        Angular, Ionic Framework, Typescript, Bootstrap, Tailwind CSS, Node.js, GCP, HTML, CSS, and JavaScript — and I’m
-        always exploring new technologies to push the boundaries of what the web can do.
-    </p>
-    <h3 class="text-2xl font-bold mt-10 mb-4 text-cyan-300">Skills</h3>
+    <div class="bg-gray-900/70 border border-cyan-700 rounded-3xl p-6 mb-8">
+        <h3 class="text-2xl font-bold mb-3 text-cyan-300">Professional Summary</h3>
+        <p class="text-lg text-gray-300 leading-8">
+            Experienced Software Engineer with 3.7+ years of full-stack web and mobile application development. I build
+            scalable, cross-platform solutions using Angular, Ionic, Firebase, and Google Cloud Platform, while delivering
+            polished interfaces, clean code, and strong outcomes across both frontend and backend development.
+        </p>
+    </div>
+
+    <h3 class="text-2xl font-bold mt-6 mb-4 text-cyan-300">Skills</h3>
     <div class="flex flex-wrap gap-4 mt-4">
         @for(skill of skills(); track skill;){
         <span class="bg-cyan-700/80 text-white px-4 py-2 rounded-full text-base font-semibold shadow">{{ skill }}</span>
@@ -16,9 +20,22 @@
     <h3 class="text-2xl font-bold mt-10 mb-4 text-cyan-300">Tools</h3>
     <div class="flex flex-wrap gap-4">
         @for(tool of tools(); track tool;){
-        <span class="bg-gray-800 text-cyan-200 px-4 py-2 rounded-full text-base font-semibold shadow">{{ tool
-            }}</span>
+        <span class="bg-gray-800 text-cyan-200 px-4 py-2 rounded-full text-base font-semibold shadow">{{ tool }}</span>
+        }
+    </div>
 
+    <h3 id="certifications" class="text-2xl font-bold mt-10 mb-6 text-cyan-300">Certifications</h3>
+    <div class="flex gap-6 overflow-x-auto scroll-smooth pb-4 snap-x snap-mandatory">
+        @for(cert of certifications(); track cert;){
+        <article class="snap-start shrink-0 min-w-[280px] max-w-[320px] rounded-3xl border border-cyan-700 bg-gradient-to-br from-cyan-950/90 to-gray-900 p-6 shadow-xl transition hover:-translate-y-1">
+            <h4 class="text-xl font-semibold text-white mb-3">{{ cert.title }}</h4>
+            <p class="text-gray-300 mb-5 max-h-24 overflow-hidden">{{ cert.summary }}</p>
+            <button type="button"
+                class="px-6 py-3 bg-cyan-500 text-white rounded-full font-semibold shadow hover:bg-cyan-400 transition"
+                (click)="openCertification(cert.url)">
+                View
+            </button>
+        </article>
         }
     </div>
 </section>
