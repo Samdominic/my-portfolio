@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { signal } from '@angular/core';
 
 @Component({
   selector: 'app-projects',
   imports: [],
   templateUrl: './projects.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './projects.scss'
 })
 export class Projects {
@@ -28,20 +29,18 @@ export class Projects {
       'Angular',
       'Angular Material',
       'Node.js',
-      'Express.js',
       'MongoDB',
     ],
   },
   {
     title: 'Exam Writing System',
     description:
-      'A cross-platform examination application developed for iOS, Android, iPad, and tablets, enabling students to securely write and submit exams online. The system supports question navigation, auto-save functionality, timer management, offline synchronization, and real-time exam monitoring.',
+      'A cross-platform examination application developed for iOS, Android and Web, enabling students to securely write and submit exams online. The system supports question navigation, auto-save functionality, timer management, offline synchronization, and real-time exam monitoring.',
     technologies: [
       'Angular',
       'Ionic',
       'Capacitor',
       'Node.js',
-      'Express.js',
       'MongoDB',
     ],
   },

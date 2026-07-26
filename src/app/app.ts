@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, ChangeDetectionStrategy } from '@angular/core';
 import { NavBar } from './nav-bar/nav-bar';
 import { Projects } from './projects/projects';
 import { About } from './about/about';
@@ -9,6 +9,7 @@ import { HeroSection } from './hero-section/hero-section';
   selector: 'app-root',
   imports: [NavBar, Projects, About, ContactSection, HeroSection],
   templateUrl: './app.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './app.scss'
 })
 export class App {

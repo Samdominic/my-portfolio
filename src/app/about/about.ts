@@ -1,9 +1,10 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-about',
   imports: [],
   templateUrl: './about.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './about.scss'
 })
 export class About {

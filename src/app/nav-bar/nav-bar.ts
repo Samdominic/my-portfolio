@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-nav-bar',
   imports: [],
   templateUrl: './nav-bar.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './nav-bar.scss'
 })
 export class NavBar {

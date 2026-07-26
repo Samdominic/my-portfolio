@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { NgOptimizedImage } from "@angular/common";
 
 @Component({
   selector: 'app-contact-section',
   imports: [NgOptimizedImage],
   templateUrl: './contact-section.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './contact-section.scss'
 })
 export class ContactSection {
