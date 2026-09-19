@@ -4,13 +4,23 @@ import { Projects } from './projects/projects';
 import { About } from './about/about';
 import { ContactSection } from './contact-section/contact-section';
 import { HeroSection } from './hero-section/hero-section';
+import { ToolsAndTechnologies } from './tools-and-technologies/tools-and-technologies';
+import { ExperienceAndMilestones } from './experience-and-milestones/experience-and-milestones';
 
 @Component({
   selector: 'app-root',
-  imports: [NavBar, Projects, About, ContactSection, HeroSection],
+  imports: [
+    NavBar,
+    Projects,
+    About,
+    ContactSection,
+    HeroSection,
+    ToolsAndTechnologies,
+    ExperienceAndMilestones,
+  ],
   templateUrl: './app.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
 })
 export class App {
   protected readonly title = signal('my-portfolio');

@@ -1,0 +1,36 @@
+<div class="text-center m-4 p-4">
+  <h1 class="text-4xl font-bold mb-3 text-cyan-400">Tools & Technologies</h1>
+  <p class="text-lg text-gray-500 mb-5">
+    Curated stack of battle-tested frameworks, languages, and infrastructure.
+  </p>
+
+  @for (filter of filters; track filter.category) {
+    <button
+      class="m-2 rounded-full border border-gray-700 px-4 py-2 text-sm font-semibold transition-all duration-300 ease-in-out hover:scale-105"
+      [class.bg-cyan-500]="selectedFilter().category === filter.category"
+      [class.text-gray-100]="selectedFilter().category === filter.category"
+      [class.hover\:bg-cyan-600]="selectedFilter().category === filter.category"
+      [class.bg-slate-900]="selectedFilter().category !== filter.category"
+      [class.text-gray-400]="selectedFilter().category !== filter.category"
+      [class.hover\:text-gray-100]="selectedFilter().category !== filter.category"
+      (click)="selectedFilter.set(filter)"
+    >
+      {{ filter.name }}
+    </button>
+  }
+
+  <div class="flex flex-wrap justify-center items-center gap-4 mt-3 mb-12 p-3">
+    @for (skill of filteredSkills(); track skill.name) {
+      <div
+        class="flex h-[120px] w-[270px] flex-col items-center justify-center gap-3 rounded-lg border border-gray-700 px-10 py-3 text-gray-300 transition hover:scale-105 hover:border-cyan-600 hover:text-cyan-400"
+      >
+        @if (skill.logo) {
+          <img class="object-cover" [src]="skill.logo" alt="Logo" width="40" />
+        }
+        <span class="">
+          {{ skill.name }}
+        </span>
+      </div>
+    }
+  </div>
+</div>

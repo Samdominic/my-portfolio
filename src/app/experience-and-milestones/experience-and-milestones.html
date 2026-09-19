@@ -1,0 +1,72 @@
+<section
+  class="mx-auto w-[calc(100%-2rem)] max-w-[880px] py-8 text-blue-100 sm:py-8"
+  aria-labelledby="milestones-title"
+>
+  <header class="mb-12 text-center sm:mb-[4.25rem]">
+    <h2
+      id="milestones-title"
+      class="m-0 text-[clamp(2rem,4vw,2.25rem)] font-extrabold tracking-tight text-slate-50"
+    >
+      Experience &amp; Milestones
+    </h2>
+    <p class="mt-3 inline-block text-base leading-6 text-grey-950">
+      A chronicle of leadership, engineering execution, and shipped software.
+    </p>
+  </header>
+
+  <div
+    class="relative ml-5 pl-8 before:absolute before:bottom-0 before:left-0 before:top-2 before:w-px before:bg-[#1e3a5f] before:content-['']"
+  >
+    @for (
+      experience of experiences;
+      track experience.company + experience.period;
+      let first = $first
+    ) {
+      <article class="relative pb-13 last:pb-0">
+        <span
+          class="absolute left-[-2.53rem] top-1.5 size-4 rounded-full border-2 border-slate-500 bg-[#030712]"
+          [style.border-color]="experience.current || first ? '#22d3ee' : '#64748b'"
+          [style.box-shadow]="
+            experience.current || first ? '0 0 1rem rgb(34 211 238 / 55%)' : 'none'
+          "
+          aria-hidden="true"
+        ></span>
+        <div>
+          <div
+            class="flex flex-col items-start justify-between gap-1 sm:flex-row sm:items-baseline sm:gap-4"
+          >
+            <h3
+              class="m-0 text-lg font-bold text-slate-50"
+              [class.text-cyan-300]="experience.current || first"
+            >
+              {{ experience.role }}
+            </h3>
+            <time
+              class="shrink-0 font-mono text-xs text-slate-400"
+              [class.text-cyan-300]="experience.current || first"
+              >{{ experience.period }}</time
+            >
+          </div>
+          <p class="my-1.5 text-sm font-semibold leading-[1.65] text-slate-400">
+            {{ experience.company }}
+          </p>
+          <ul
+            class="m-0 max-w-[760px] list-disc space-y-1 pl-[1.15rem] text-sm leading-[1.65] text-slate-400"
+          >
+            @for (point of experience.description; track point) {
+              <li>{{ point }}</li>
+            }
+          </ul>
+          <div class="mt-3.5 flex flex-wrap gap-2" aria-label="Technologies used">
+            @for (technology of experience.technologies; track technology) {
+              <span
+                class="rounded-[0.2rem] border border-slate-800 bg-slate-900 px-2 py-1 text-[0.6875rem] text-slate-400"
+                >{{ technology }}</span
+              >
+            }
+          </div>
+        </div>
+      </article>
+    }
+  </div>
+</section>
